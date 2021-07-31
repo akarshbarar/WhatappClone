@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/CallPage.dart';
+import 'package:whatsapp/ChatPage.dart';
+import 'package:whatsapp/StatusPage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -13,6 +16,7 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
         child: DefaultTabController(
       length: 4,
+      initialIndex: 1,
       child: Scaffold(
         appBar: AppBar(
           title: Text("WhatsApp"),
@@ -23,7 +27,7 @@ class _HomePageState extends State<HomePage> {
           bottom: TabBar(
             tabs: [
               Tab(
-                icon: Icon(Icons.camera),
+                icon: Icon(Icons.camera_alt),
               ),
               Tab(
                 child: Text("CHATS"),
@@ -37,15 +41,15 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-        body: Center(
-          child: Text("Hii"),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(
-            Icons.message,
-            color: Colors.white,
-          ),
+        body: TabBarView(
+          children: [
+            Center(
+              child: Text("Camera"),
+            ),
+            ChatPage(),
+            StatusPage(),
+            CallPage()
+          ],
         ),
       ),
     ));
