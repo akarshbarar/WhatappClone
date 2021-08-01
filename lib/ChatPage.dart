@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/MainChatPage.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({Key? key}) : super(key: key);
@@ -15,6 +16,11 @@ class _ChatPageState extends State<ChatPage> {
           itemCount: 15,
           itemBuilder: (context, index) {
             return ListTile(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) =>
+                        MainChatPage(userName: "User $index")));
+              },
               leading: CircleAvatar(
                 child: FlutterLogo(),
               ),
