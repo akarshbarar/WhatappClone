@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/UTILS/AppColors.dart';
+import 'package:whatsapp/UserProfile.dart';
 
 class MainChatPage extends StatefulWidget {
   final String userName;
@@ -14,10 +15,22 @@ class _MainChatPageState extends State<MainChatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: CircleAvatar(
-            child: FlutterLogo(),
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => UsrProfile(userName: widget.userName)));
+            },
+            child: CircleAvatar(
+              child: FlutterLogo(),
+            ),
           ),
-          title: Text(widget.userName),
+          title: GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) =>
+                        UsrProfile(userName: widget.userName)));
+              },
+              child: Text(widget.userName)),
           actions: [
             Icon(Icons.video_call),
             SizedBox(
