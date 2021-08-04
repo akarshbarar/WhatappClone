@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/CurrentUserSettings.dart';
 import 'package:whatsapp/HomePage.dart';
 import 'package:whatsapp/UTILS/AppColors.dart';
 
@@ -17,7 +18,10 @@ class MyApp extends StatelessWidget {
           primaryColor: AppColors.tealGreenDark,
           accentColor: AppColors.lightGreenDark),
       home: HomePage(),
-      routes: {'/home': (context) => HomePage()},
+      routes: {
+        '/home': (context) => HomePage(),
+        '/setting': (context) => CurrentUserSettings()
+      },
     );
   }
 }

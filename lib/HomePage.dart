@@ -22,7 +22,13 @@ class _HomePageState extends State<HomePage> {
           title: Text("WhatsApp"),
           actions: [
             IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.more_vert))
+            PopupMenuButton<int>(
+                onSelected: (item) =>
+                    {Navigator.of(context).pushNamed("/setting")},
+                itemBuilder: (context) => [
+                      PopupMenuItem<int>(value: 0, child: Text('Logout')),
+                      PopupMenuItem<int>(value: 1, child: Text('Settings')),
+                    ])
           ],
           bottom: TabBar(
             tabs: [
