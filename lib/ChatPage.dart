@@ -36,7 +36,9 @@ class _ChatPageState extends State<ChatPage> {
             );
           }),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed('/newchat');
+        },
         child: Icon(
           Icons.message,
           color: Colors.white,

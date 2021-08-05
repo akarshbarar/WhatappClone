@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/CurrentUserSettings.dart';
 import 'package:whatsapp/HomePage.dart';
+import 'package:whatsapp/NewChat.dart';
 import 'package:whatsapp/UTILS/AppColors.dart';
 
 void main() {
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
       home: HomePage(),
       routes: {
         '/home': (context) => HomePage(),
-        '/setting': (context) => CurrentUserSettings()
+        '/setting': (context) => CurrentUserSettings(),
+        '/newchat': (context) => NewChat()
       },
     );
   }
